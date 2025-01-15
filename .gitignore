@@ -1,0 +1,5 @@
+*.txt
+*.json
+secret.py
+.cache
+**/__pycache__
