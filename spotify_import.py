@@ -91,7 +91,7 @@ def import_to_playlist(
 def make_parser():
     NOW = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     parser = argparse.ArgumentParser(
-        description="Import tracks to Spotify playlist. Can import from a list of tracks, a list of albums, or a list of artists. Can import to a new or an existing Spotify playlist."
+        description="Import tracks to Spotify playlist. Can import from a list of track IDs, a list of albums, or a list of artists. Can import to a new or an existing Spotify playlist."
     )
     parser.add_argument(
         "file_in",
