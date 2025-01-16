@@ -1,8 +1,9 @@
 """Scrape bandcamp lists for album pages."""
 
 from pathlib import Path
-from bs4 import BeautifulSoup
+
 import pandas as pd
+from bs4 import BeautifulSoup
 
 
 def scrape_album_names(html_file: Path) -> list[tuple[str, str]]:

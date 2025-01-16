@@ -1,5 +1,6 @@
-import spotipy
 from collections import namedtuple
+
+import spotipy
 from thefuzz import fuzz  # String similarity.
 
 NameID = namedtuple("NameID", "name id")
