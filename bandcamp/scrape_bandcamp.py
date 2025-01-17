@@ -2,7 +2,6 @@
 
 from pathlib import Path
 
-import pandas as pd
 from bs4 import BeautifulSoup
 
 
@@ -64,17 +63,3 @@ def scrape_artist_album(html_file: Path) -> tuple[str, str] | tuple[None, None]:
     if len(album_artist) > 1:
         return album_artist[1].strip(), album_artist[0].strip()
     return None, None
-
-
-if __name__ == "__main__":
-    import sys
-
-    args = sys.argv
-    file = Path(args[1])
-
-    l = scrape_album_names(file)
-
-    filename = f"{file.name}.csv"
-    df = pd.DataFrame(l, columns=["artist", "album"])
-    df.to_csv(filename, index=False)
-    print(f"Saved to {filename}.")
