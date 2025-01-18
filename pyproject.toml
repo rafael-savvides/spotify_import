@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spotify-import"
+dynamic = ["version"]
 dependencies = [
   "spotipy",
   "thefuzz",
