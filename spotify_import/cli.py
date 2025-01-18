@@ -111,15 +111,15 @@ def make_parser():
 
 
 if __name__ == "__main__":
-    import secret
+    import os
 
     parser = make_parser()
     args = parser.parse_args()
     auth = {
-        "client_id": secret.client_id,
-        "client_secret": secret.client_secret,
-        "redirect_uri": secret.redirect_uri,
-        "user_id": secret.user_id,
+        "client_id": os.getenv("SPOTIPY_CLIENT_ID"),
+        "client_secret": os.getenv("SPOTIPY_CLIENT_SECRET"),
+        "redirect_uri": os.getenv("SPOTIPY_REDIRECT_URI"),
+        "user_id": os.getenv("SPOTIPY_USER_ID"),
     }
     import_to_playlist(
         file_in=args.file_in,

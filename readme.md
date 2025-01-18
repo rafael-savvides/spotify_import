@@ -12,3 +12,16 @@ spotify_import [file] --mode [tracks,albums,artists,bandcamp_daily]
 - `albums`: Album names, given as "album - artist" (separated by newlines).
 - `artists`: Artist names (separated by newlines). For each artist, the playlist contains their top 10 tracks.
 - `bandcamp_daily`: HTML file of a Bandcamp Daily page (this used to be a URL but Bandcamp doesn't allow scraping anymore).
+
+## Authentication
+
+See [spotipy](https://github.com/spotipy-dev/spotipy) on authenticating with Spotify's Web API, then set the following environment variables: 
+
+```sh
+export SPOTIPY_CLIENT_ID='your-spotify-client-id'
+export SPOTIPY_CLIENT_SECRET='your-spotify-client-secret'
+export SPOTIPY_REDIRECT_URI='your-app-redirect-url'
+
+# Spotify profile in which to create a playlist.
+export SPOTIPY_USER_ID='your-spotify-user-id' 
+```
