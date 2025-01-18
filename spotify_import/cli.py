@@ -5,10 +5,10 @@ import argparse
 import datetime
 from pathlib import Path
 
-from bandcamp.scrape_bandcamp import scrape_album_names
-from spotify.client import add_to_playlist, create_playlist, make_spotify_client
-from spotify.io import read_albums, read_artists, read_tracks, save_tracks
-from spotify.search import albums_to_track_ids, artists_to_track_ids
+from .bandcamp import scrape_album_names
+from .client import add_to_playlist, create_playlist, make_spotify_client
+from .io import read_albums, read_artists, read_tracks, save_tracks
+from .search import albums_to_track_ids, artists_to_track_ids
 
 
 def import_to_playlist(
