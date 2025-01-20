@@ -2,8 +2,16 @@
 
 Create a Spotify playlist from a list of artists, albums, or a Bandcamp Daily page.
 
+## Installation
+
+```sh
+pip install .
 ```
-spotify_import [file] --mode [tracks,albums,artists,bandcamp_daily]
+
+## Usage
+
+```sh
+spotify-import [file] --mode [tracks,albums,artists,bandcamp_daily]
 ```
 
 `mode` defines what `file` is: 
@@ -22,6 +30,6 @@ export SPOTIPY_CLIENT_ID='your-spotify-client-id'
 export SPOTIPY_CLIENT_SECRET='your-spotify-client-secret'
 export SPOTIPY_REDIRECT_URI='your-app-redirect-url'
 
-# Spotify profile in which to create a playlist.
+# Spotify profile in which to create the playlist.
 export SPOTIPY_USER_ID='your-spotify-user-id' 
 ```
