@@ -40,7 +40,7 @@ def import_to_playlist(
     name: str,
     id: int,
     auth: dict,
-    file_out: str = None,
+    file_out: str | None = None,
     min_sim_artist: float = 60,
     min_sim_album: float = 60,
 ):

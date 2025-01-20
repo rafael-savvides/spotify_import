@@ -5,7 +5,7 @@ from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
 def make_spotify_client(
     client_id: str,
     client_secret: str,
-    redirect_uri: str = None,
+    redirect_uri: str | None = None,
     return_OAuth: bool = False,
 ) -> tuple[spotipy.Spotify, spotipy.Spotify]:
     """Create Spotify client
