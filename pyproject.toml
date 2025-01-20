@@ -11,3 +11,6 @@ dependencies = [
   "beautifulsoup4",
 ]
 readme = "readme.md"
+
+[project.scripts]
+spotify-import = "spotify_import:cli.cli"

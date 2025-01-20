@@ -3,12 +3,35 @@
 
 import argparse
 import datetime
+import os
 from pathlib import Path
 
 from .bandcamp import scrape_album_names
 from .client import add_to_playlist, create_playlist, make_spotify_client
 from .io import read_albums, read_artists, read_tracks, save_tracks
 from .search import albums_to_track_ids, artists_to_track_ids
+
+
+def cli():
+    """Import to Spotify playlist"""
+    parser = make_parser()
+    args = parser.parse_args()
+    auth = {
+        "client_id": os.getenv("SPOTIPY_CLIENT_ID"),
+        "client_secret": os.getenv("SPOTIPY_CLIENT_SECRET"),
+        "redirect_uri": os.getenv("SPOTIPY_REDIRECT_URI"),
+        "user_id": os.getenv("SPOTIPY_USER_ID"),
+    }
+    import_to_playlist(
+        file_in=args.file_in,
+        mode=args.mode,
+        name=args.name,
+        id=args.id,
+        auth=auth,
+        file_out=None,
+        min_sim_artist=60,
+        min_sim_album=60,
+    )
 
 
 def import_to_playlist(
@@ -111,23 +134,4 @@ def make_parser():
 
 
 if __name__ == "__main__":
-    import os
-
-    parser = make_parser()
-    args = parser.parse_args()
-    auth = {
-        "client_id": os.getenv("SPOTIPY_CLIENT_ID"),
-        "client_secret": os.getenv("SPOTIPY_CLIENT_SECRET"),
-        "redirect_uri": os.getenv("SPOTIPY_REDIRECT_URI"),
-        "user_id": os.getenv("SPOTIPY_USER_ID"),
-    }
-    import_to_playlist(
-        file_in=args.file_in,
-        mode=args.mode,
-        name=args.name,
-        id=args.id,
-        auth=auth,
-        file_out=None,
-        min_sim_artist=60,
-        min_sim_album=60,
-    )
+    cli()
