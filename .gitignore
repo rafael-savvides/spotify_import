@@ -4,3 +4,4 @@ secret.py
 .cache
 **/__pycache__
 .venv
+*.egg-info
